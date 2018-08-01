@@ -1,21 +1,18 @@
-# cordova-plugin-xychannel- A Plugin for Cordova that can get channelid
+# cordova-plugin-jb-GuidePagerPlugin- A Guide Pager Plugin(app中添加首次安装引导页)
 
 ##Requirements
 
- - IOS 7 or higher
+ - IOS 9 or higher
 
 ##Installation
 
-    cordova plugin add cordova-plugin-xychannel
+    cordova plugin add cordova-plugin-jb-GuidePagerPlugin
     
 ##Simple Usage
 
 
-cordova.plugins.ChannelPlugin.getChannel(function(msg){    
-                       alert(msg);    
-                   },function(msg){    
-                        alet(msg);    
-                  })
+     cordova.plugin.GuidePagerPlugin.openGuidePager();
+
 
   
 ##LICENSE
