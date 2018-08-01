@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-jb-GuidePagerPlugin" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>GuidePagerPlugin</name>
+    
+    <js-module name="GuidePagerPlugin" src="www/GuidePagerPlugin.js">
+        <clobbers target="cordova.plugin.GuidePagerPlugin" />
+    </js-module>
+
+    <hook type="before_plugin_uninstall" src="scripts/beforePluginUninstall.js" />
+
+     <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">    
+            <feature name="GuidePagerPlugin">    
+                <param name="android-package" value="com.guidepager.plugin.GuidePagerPlugin"/>    
+            </feature>    
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity 
+                android:name="com.guidepager.plugin.GuidePagerActivity"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen"> 
+            </activity>
+        </config-file>
+
+        <source-file src="src/android/GuidePagerActivity.java" target-dir="src/com/guidepager/plugin"/>
+        <source-file src="src/android/GuidePagerPlugin.java" target-dir="src/com/guidepager/plugin"/>
+        <source-file src="src/android/GuideViewPagerAdapter.java" target-dir="src/com/guidepager/plugin"/>
+        <source-file src="src/android/AppTools.java" target-dir="src/com/guidepager/plugin"/>
+        <source-file src="src/android/MyPreference.java" target-dir="src/com/guidepager/plugin"/>
+        <source-file src="src/android/MResource.java" target-dir="src/com/guidepager/plugin"/>
+
+
+        <source-file src="src/android/res/layout/activity_guide_pager.xml" target-dir="res/layout"/>
+        <source-file src="src/android/res/layout/guid_view1.xml" target-dir="res/layout"/>
+        <source-file src="src/android/res/layout/guid_view2.xml" target-dir="res/layout"/>
+        <source-file src="src/android/res/layout/guid_view3.xml" target-dir="res/layout"/>
+
+        <source-file src="src/android/res/drawable/button_enter_shape.xml" target-dir="res/drawable"/>
+        <source-file src="src/android/res/drawable/dot_selector.xml" target-dir="res/drawable"/>
+        <source-file src="src/android/res/drawable/point1.png" target-dir="app/src/main/res/drawable"/>
+        <source-file src="src/android/res/drawable/point2.png" target-dir="app/src/main/res/drawable"/>
+
+        <source-file src="src/android/res/mipmap-xhdpi/pic_guidepage_1.png" target-dir="app/src/main/res/mipmap-xhdpi"/>
+        <source-file src="src/android/res/mipmap-xhdpi/pic_guidepage_2.png" target-dir="app/src/main/res/mipmap-xhdpi"/>
+        <source-file src="src/android/res/mipmap-xhdpi/pic_guidepage_3.png" target-dir="app/src/main/res/mipmap-xhdpi"/>
+
+        <source-file src="src/android/res/mipmap-xxhdpi/pic_guidepage_1.png" target-dir="app/src/main/res/mipmap-xxhdpi"/>
+        <source-file src="src/android/res/mipmap-xxhdpi/pic_guidepage_2.png" target-dir="app/src/main/res/mipmap-xxhdpi"/>
+        <source-file src="src/android/res/mipmap-xxhdpi/pic_guidepage_3.png" target-dir="app/src/main/res/mipmap-xxhdpi"/>
+    </platform>
+
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="GuidePagerPlugin">
+                <param name="ios-package" value="GuidePagerPlugin"/>
+            </feature>
+        </config-file>   
+        <header-file src="src/ios/GuidePagerPlugin.h" />
+        <source-file src="src/ios/GuidePagerPlugin.m" />
+
+        <header-file src="src/ios/JBWelcomeGuideActivity.h" />
+        <source-file src="src/ios/JBWelcomeGuideActivity.m" />
+
+        <resource-file src="src/ios/res/pic_guidepage_1.png"/>
+        <resource-file src="src/ios/res/pic_guidepage_2.png"/>
+        <resource-file src="src/ios/res/pic_guidepage_3.png"/>
+
+    </platform>     
+</plugin>
