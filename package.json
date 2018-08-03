@@ -1,9 +1,9 @@
 {
-  "name": "cordova-jb-plugin-guidepager",
+  "name": "cordova-plugin-jb-GuidePagerPlugin",
   "version": "1.0.1",
   "description": "a guidepager",
   "cordova": {
-    "id": "cordova-jb-plugin-guidepager",
+    "id": "cordova-plugin-jb-GuidePagerPlugin",
     "platforms": [
       "android",
       "ios"
