@@ -25,5 +25,6 @@
   "bugs": {
     "url": "https://github.com/XiaoyuZheng666/GuidePagerPlugin.git/issues"
   },
-  "homepage": "https://github.com/XiaoyuZheng666/GuidePagerPlugin.git#readme"
+  "homepage": "https://github.com/XiaoyuZheng666/GuidePagerPlugin.git#readme",
+  "dependencies": {}
 }
