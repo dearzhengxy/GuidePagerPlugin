@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-jb-guidepagerplugin",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "a guidepager",
   "cordova": {
     "id": "cordova-plugin-jb-guidepagerplugin",

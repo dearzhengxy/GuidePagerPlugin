@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-jb-guidepagerplugin" version="1.0.3" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="cordova-plugin-jb-guidepagerplugin" version="1.0.6" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>GuidePagerPlugin</name>
     
     <js-module name="GuidePagerPlugin" src="www/GuidePagerPlugin.js">
@@ -59,12 +59,21 @@
         <header-file src="src/ios/GuidePagerPlugin.h" />
         <source-file src="src/ios/GuidePagerPlugin.m" />
 
+        <header-file src="src/ios/XYPageControl.h" />
+        <source-file src="src/ios/XYPageControl.m" />
+
         <header-file src="src/ios/JBWelcomeGuideActivity.h" />
         <source-file src="src/ios/JBWelcomeGuideActivity.m" />
 
         <resource-file src="src/ios/res/pic_guidepage_1.png"/>
         <resource-file src="src/ios/res/pic_guidepage_2.png"/>
         <resource-file src="src/ios/res/pic_guidepage_3.png"/>
+
+
+        <resource-file src="src/ios/res/pic_guidepage_x1.png"/>
+        <resource-file src="src/ios/res/pic_guidepage_x2.png"/>
+        <resource-file src="src/ios/res/pic_guidepage_x3.png"/>
+
 
     </platform>     
 </plugin>
