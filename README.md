@@ -1,4 +1,4 @@
-# cordova-plugin-jb-GuidePagerPlugin- A Guide Pager Plugin(app中添加首次安装引导页)
+# cordova-plugin-jb-guidepagerplugin- A Guide Pager Plugin(app中添加首次安装引导页)
 
 ##Requirements
 
@@ -6,7 +6,7 @@
 
 ##Installation
 
-    cordova plugin add cordova-plugin-jb-GuidePagerPlugin
+    cordova plugin add cordova-plugin-jb-guidepagerplugin
     
 ##Simple Usage
 

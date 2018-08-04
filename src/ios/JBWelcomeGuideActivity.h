@@ -6,10 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XYPageControl.h"
 @interface JBWelcomeGuideActivity : UIViewController<UIScrollViewDelegate>
 
 @property(strong ,nonatomic) UIScrollView   * scrollView;
-@property(strong ,nonatomic) UIPageControl  * pageControl;
+@property(strong ,nonatomic) XYPageControl  * pageControl;
 @property(strong ,nonatomic) NSMutableArray * dataArray ;
 
 @end

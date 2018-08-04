@@ -6,15 +6,24 @@
 //
 
 #import "JBWelcomeGuideActivity.h"
-#define kTiYanButtonWidth 134
-#define kTiYanButtonHeight 39
+
+#define kIsiPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
 #define kScreenWidth [[UIScreen mainScreen]bounds].size.width
 #define kScreenHeight [[UIScreen mainScreen]bounds].size.height
 
+#define kIphone6Width 375.0    //iphone6的宽度
+#define kIphone6Height 667.0   //iphone6的高度
 
-#define kJBUnselectPointColor [self colorWithHexString:@"#efefef"]
-#define kJBselectPointColor [self colorWithHexString:@"#cc9201"]
+#define kPageControlToBottom 60*(kScreenHeight/kIphone6Height)//pagecontrol到屏幕底部的距离
+#define kPageControlHeight 40//pagecontrol的高度
+#define kPageControlAndTiYanBtnGap 49//pagecontrol和体验按钮之间的距离
+
+#define kTiYanButtonWidth 120*(kScreenWidth/kIphone6Width)
+#define kTiYanButtonHeight 38*(kScreenHeight/kIphone6Height)
+
+#define kJBUnselectPointColor [self colorWithHexString:@"#d3e8ff"]
+#define kJBselectPointColor [self colorWithHexString:@"#225bf4"]
 
 @interface JBWelcomeGuideActivity ()
 {
@@ -46,12 +55,18 @@
 //}
 //获取数据
 -(void)createData{
-    self.dataArray = [NSMutableArray arrayWithObjects:@"pic_guidepage_1.png",@"pic_guidepage_2.png",@"pic_guidepage_3.png", nil];
+    
+    if (kIsiPhoneX) {
+        self.dataArray = [NSMutableArray arrayWithObjects:@"pic_guidepage_x1.png",@"pic_guidepage_x2.png",@"pic_guidepage_x3.png", nil];
+    }
+    else{
+        self.dataArray = [NSMutableArray arrayWithObjects:@"pic_guidepage_1.png",@"pic_guidepage_2.png",@"pic_guidepage_3.png", nil];
+    }
 }
 //创建PageContorl
 -(void)createPageContorl{
     
-    self.pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0, kScreenHeight-60, kScreenWidth, 40)];
+    self.pageControl = [[XYPageControl alloc]initWithFrame:CGRectMake(0, kScreenHeight-kPageControlToBottom, kScreenWidth, kPageControlHeight)];
     self.pageControl.numberOfPages   = [self.dataArray count];
     self.pageControl.currentPage = 0;
     self.pageControl.currentPageIndicatorTintColor =kJBselectPointColor;
@@ -92,14 +107,14 @@
             
             
             button = [UIButton buttonWithType:UIButtonTypeCustom];
-            button.frame       = CGRectMake(kScreenWidth/2.0-kTiYanButtonWidth/2.0, kScreenHeight*0.8, kTiYanButtonWidth, kTiYanButtonHeight) ;
-            button.backgroundColor=[self colorWithHexString:@"#cc9201"];
+            button.frame       = CGRectMake(kScreenWidth/2.0-kTiYanButtonWidth/2.0,kScreenHeight-kPageControlToBottom-kPageControlAndTiYanBtnGap-kTiYanButtonHeight, kTiYanButtonWidth, kTiYanButtonHeight) ;
+            button.backgroundColor=[self colorWithHexString:@"#3d8cff"];
             [button setTitle:@"立即体验" forState:UIControlStateNormal];
             [button.layer setBorderWidth:1.0];
             [button.layer setMasksToBounds:YES];
             [button.layer setCornerRadius:5];
             button.layer.borderColor = [UIColor whiteColor].CGColor ;
-            button.titleLabel.font = [UIFont systemFontOfSize:16];;
+            button.titleLabel.font = [UIFont systemFontOfSize:17];;
             [button setTintColor:[UIColor whiteColor]];
             [button addTarget:self action:@selector(bttonClick) forControlEvents:UIControlEventTouchUpInside];
             [image addSubview:button];
@@ -110,23 +125,7 @@
     [self.view addSubview:self.scrollView];
     
 }
-//立即体验按钮 添加 简单的动画效果
-//-(void)function:(NSInteger)count{
-//
-//    [UIView animateWithDuration:2 animations:^{
-//
-//        button.frame       = CGRectMake(WIDTH/2-60, HEIGHT*0.85, 120, 30) ;
-//         button.alpha = 1.0 ;
-//    }completion:^(BOOL finished) {
-//
-//        [UIView animateWithDuration:2 animations:^{
-//        button.frame       = CGRectMake(WIDTH/2-70, HEIGHT*0.85, 140, 40) ;
-//        button.alpha = 0.5 ;
-//        button.titleLabel.alpha = 1 ;
-//        }];
-//    }];
-//
-//}
+
 -(void)bttonClick{
     //    跳转页面动画效果
     //    UIModalTransitionStyleCoverVertical

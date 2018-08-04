@@ -1,9 +1,9 @@
 {
-  "name": "cordova-plugin-jb-GuidePagerPlugin",
-  "version": "1.0.2",
+  "name": "cordova-plugin-jb-guidepagerplugin",
+  "version": "1.0.3",
   "description": "a guidepager",
   "cordova": {
-    "id": "cordova-plugin-jb-GuidePagerPlugin",
+    "id": "cordova-plugin-jb-guidepagerplugin",
     "platforms": [
       "android",
       "ios"
@@ -25,6 +25,5 @@
   "bugs": {
     "url": "https://github.com/XiaoyuZheng666/GuidePagerPlugin.git/issues"
   },
-  "homepage": "https://github.com/XiaoyuZheng666/GuidePagerPlugin.git#readme",
-  "dependencies": {}
+  "homepage": "https://github.com/XiaoyuZheng666/GuidePagerPlugin.git#readme"
 }
